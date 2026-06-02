@@ -1,0 +1,259 @@
+Berikut contoh **aplikasi Pengumuman Kelulusan Online SMPN 2 Sukapura Tahun Pelajaran 2025/2026** yang elegan, responsif, dan menggunakan login **Nama Siswa + NISN**. Semua data pada tabel yang Anda kirim telah dimasukkan dengan status **LULUS**.
+
+<!DOCTYPE html>
+
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pengumuman Kelulusan SMPN 2 Sukapura 2025/2026</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:700px;
+    background:white;
+    border-radius:20px;
+    padding:40px;
+    box-shadow:0 20px 50px rgba(0,0,0,.2);
+}
+
+.logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.logo h1{
+    color:#1e3a8a;
+    font-size:30px;
+}
+
+.logo h2{
+    color:#334155;
+    font-size:18px;
+    font-weight:500;
+}
+
+.logo p{
+    color:#64748b;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    margin-top:12px;
+    border:1px solid #cbd5e1;
+    border-radius:10px;
+    font-size:15px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    margin-top:18px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+.result{
+    display:none;
+    text-align:center;
+}
+
+.result h3{
+    color:#1e3a8a;
+    margin-bottom:20px;
+}
+
+.status{
+    font-size:42px;
+    font-weight:700;
+    color:#16a34a;
+    margin:20px 0;
+}
+
+.data{
+    text-align:left;
+    margin-top:20px;
+    background:#f8fafc;
+    padding:20px;
+    border-radius:12px;
+}
+
+.data p{
+    margin:8px 0;
+}
+
+.footer-note{
+    margin-top:30px;
+    font-size:13px;
+    color:#dc2626;
+    background:#fef2f2;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.success{
+    background:#dcfce7;
+    border:1px solid #22c55e;
+    padding:20px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+@media(max-width:600px){
+    .container{
+        padding:25px;
+    }
+
+    .status{
+        font-size:32px;
+    }
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div id="loginPage">
+    <div class="logo">
+        <h1>PENGUMUMAN KELULUSAN</h1>
+        <h2>SMPN 2 SUKAPURA</h2>
+        <p>Tahun Pelajaran 2025/2026</p>
+    </div>
+
+```
+<input type="text" id="nama" placeholder="Masukkan Nama Siswa">
+<input type="text" id="nisn" placeholder="Masukkan NISN">
+
+<button onclick="cekKelulusan()">Lihat Hasil Kelulusan</button>
+```
+
+</div>
+
+<div id="hasil" class="result">
+
+```
+<h3>PENGUMUMAN KELULUSAN</h3>
+
+<div class="success">
+    <div class="status">LULUS</div>
+
+    <p>Selamat atas keberhasilan yang telah dicapai.</p>
+    <p>Semoga sukses pada jenjang pendidikan berikutnya.</p>
+</div>
+
+<div class="data">
+    <p><strong>Nama :</strong> <span id="hasilNama"></span></p>
+    <p><strong>NISN :</strong> <span id="hasilNisn"></span></p>
+    <p><strong>Status :</strong> LULUS</p>
+    <p><strong>Sekolah :</strong> SMPN 2 Sukapura</p>
+    <p><strong>Tahun Pelajaran :</strong> 2025/2026</p>
+</div>
+
+<div class="footer-note">
+    Jika ada perbedaan hasil pengumuman online dan manual maka yang menjadi acuan adalah dokumen kelulusan yang telah disahkan dan ditandatangani oleh kepala sekolah.
+</div>
+```
+
+</div>
+
+</div>
+
+<script>
+
+const siswa = [
+
+{nama:"ADITYA JOVI PUTRA",nisn:"0116393121",status:"LULUS"},
+{nama:"AFKARINA HIQMATAL MAULA",nisn:"0119192104",status:"LULUS"},
+{nama:"ANDRE APRILEO SYAHPUTRA",nisn:"0114340065",status:"LULUS"},
+{nama:"AYUARISTA MEYZA GABRIEL EKA SAFITRI",nisn:"0114038714",status:"LULUS"},
+{nama:"DEBI SUBIANTO",nisn:"0105044683",status:"LULUS"},
+{nama:"DEVI AURELIYA PUTRI",nisn:"0108891167",status:"LULUS"},
+{nama:"FADHILAH NUR KHOFIFAH",nisn:"0111319276",status:"LULUS"},
+{nama:"FAIQKAR NABIL RIFKY",nisn:"0117210929",status:"LULUS"},
+{nama:"FEBRIAN DWI ARDIANSAH",nisn:"0111038309",status:"LULUS"},
+{nama:"FITRAH DZULHIJAH",nisn:"0103035512",status:"LULUS"},
+{nama:"JENNY DWI IZZA AFKARINA",nisn:"0106149734",status:"LULUS"},
+{nama:"LINNAUZ FEBY DWI ASTUTI",nisn:"0103641739",status:"LULUS"},
+{nama:"LINTAR DAMARUDIN HIDAYAT",nisn:"0113791974",status:"LULUS"},
+{nama:"LUTFIAH AULIA ILMI",nisn:"0109367328",status:"LULUS"},
+{nama:"MOCH OKTAVIA EKA SAPUTRA",nisn:"0106462008",status:"LULUS"},
+{nama:"MUHAMMAD FARHANNUDDIN",nisn:"0109396092",status:"LULUS"},
+{nama:"MUHAMMAD RAFKA NUR EFENDI",nisn:"0106209627",status:"LULUS"},
+{nama:"MUHAMMAD ROMADLONI",nisn:"0101475281",status:"LULUS"},
+{nama:"MUHLISIN",nisn:"0098412037",status:"LULUS"},
+{nama:"NAILA ZAINA ELYSIA",nisn:"0106233451",status:"LULUS"},
+{nama:"NOVA CITRA HAFIZHATUR RASYIFAH",nisn:"0102544873",status:"LULUS"},
+{nama:"PUSPA FIRDATUL ZANAH",nisn:"0102971661",status:"LULUS"},
+{nama:"RAMADANI",nisn:"0113438317",status:"LULUS"},
+{nama:"REGINA ANGELITA MEISYALITA",nisn:"0108544021",status:"LULUS"},
+{nama:"RENO AHMAD AFANDI",nisn:"0102328155",status:"LULUS"},
+{nama:"SAILA RIZQIAH NURHORIDA",nisn:"0115959650",status:"LULUS"},
+{nama:"SALLY NAELA HABIBAH",nisn:"0104358214",status:"LULUS"},
+{nama:"SANDINI RABWA ANGGREINI",nisn:"0119354550",status:"LULUS"},
+{nama:"SHAFIRA AUREL NATALIA",nisn:"0106193738",status:"LULUS"},
+{nama:"SILVI",nisn:"0117360748",status:"LULUS"},
+{nama:"ZAINUL HIDAYAT HABIBULLAH",nisn:"0111984402",status:"LULUS"},
+{nama:"ZALVA AINUR SEVTIARI",nisn:"0113188833",status:"LULUS"},
+{nama:"ZHEEVANA MICHAELLA ACHIRA",nisn:"0114430649",status:"LULUS"}
+
+];
+
+function cekKelulusan(){
+
+const nama = document.getElementById('nama').value.trim().toUpperCase();
+const nisn = document.getElementById('nisn').value.trim();
+
+const data = siswa.find(
+s => s.nama === nama && s.nisn === nisn
+);
+
+if(data){
+
+document.getElementById('loginPage').style.display='none';
+document.getElementById('hasil').style.display='block';
+
+document.getElementById('hasilNama').innerText=data.nama;
+document.getElementById('hasilNisn').innerText=data.nisn;
+
+}else{
+alert('Nama atau NISN tidak ditemukan.');
+}
+}
+</script>
+
+</body>
+</html>
+
+Kode di atas dapat langsung disimpan sebagai **index.html** dan diunggah ke hosting, GitHub Pages, Netlify, atau server sekolah. Tampilan akan menampilkan halaman login terlebih dahulu, lalu hasil kelulusan setelah nama dan NISN sesuai dengan data yang tersedia.
